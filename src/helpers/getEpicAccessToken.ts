@@ -9,7 +9,7 @@ config();
 const epicClientId = process.env.EPIC_CLIENT_ID;
 const epicTokenUrl = process.env.EPIC_TOKEN_URL;
 
-export const getAccessToken = async () => {
+export const getEpicAccessToken = async () => {
 	try {
 		const privateKey = fs.readFileSync(
 			`${__dirname}/../../certificates/privatekey.pem`,

@@ -1,16 +1,18 @@
 import axios from "axios";
 import type { Request, Response } from "express";
-import { getEpicAccessToken } from "../../helpers/getEpicAccessToken";
-import { getPatientAllergies } from "./api/patient/getPatientAllergies";
-import { getPatientAppointments } from "./api/patient/getPatientAppointments";
-import { getPatientInfo } from "./api/patient/getPatientInfo";
-import { getPatientReports } from "./api/patient/getPatientReports";
-import { getPatientVitals } from "./api/patient/getPatientVitals";
+import { getCernerAccessToken } from "../../helpers/getCernerAccessToken";
+import { getPatientInfo } from "./api/getPatientInfo";
+import { getPatientAllergies } from "./api/getPatientAllergies";
+import { getPatientAppointments } from "./api/getPatientAppointments";
+import { getPatientVitals } from "./api/getPatientVitals";
+import { getPatientReports } from "./api/getPatientReports";
+// import { getPatientReports } from "./api/patient/getPatientReports";
+// import { getPatientVitals } from "./api/patient/getPatientVitals";
 
-export const getEpicPatientData = async (req: Request, res: Response) => {
+export const getCernerPatientData = async (req: Request, res: Response) => {
 	try {
 		const { familyName, birthDate } = req.query;
-		const accessToken = (await getEpicAccessToken()) as string;
+		const accessToken = (await getCernerAccessToken()) as string;
 
 		if (!familyName || !birthDate) {
 			throw new Error("Missing required query parameters");
