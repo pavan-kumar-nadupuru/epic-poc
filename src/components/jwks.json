@@ -1,0 +1,11 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "kid": "myapp",
+      "x5t": "kn5_-aKFn8Eu3Wjw0v5wKSo9nxM",
+      "n": "p1cxpXwex4ixYywnDTrtc7CXOrIinixK-7WJEkNF_ieeOHX1QbSSFScpLjZ3jQvtoPG-EIKbUIdmO_kPeDlN68KQN66RB4Q1co8Sdv1cCwmQObl-pvF5x7NoOnj-FFilrfMz0OvuRZH3m6PNLQuuMf9IvcfSmfnNMFUjo5fTU6X2fpvwWh1Yb69Nt2sbjBzz-k9qVgtxgFcMdZnpFVVzopt4sh7bzooi4poq_rNf5qRxMYArq4yDafL2kyKKyJ24ryNtVnGxFpzuvJYL_V3dnAN6qZhG17SwuJDC9Bwly_ZZg7gn8BrGa2-I8G9zgXr64epWcdc6_YqdraCcWMtyvQ",
+      "e": "AQAB"
+    }
+  ]
+}
