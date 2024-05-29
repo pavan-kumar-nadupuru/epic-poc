@@ -1,12 +1,12 @@
 import axios from "axios";
 import type { Request, Response } from "express";
 import { getEpicAccessToken } from "../../helpers/getEpicAccessToken";
-import { getPatientAllergies } from "./api/patient/getPatientAllergies";
-import { getPatientAppointments } from "./api/patient/getPatientAppointments";
-import { getPatientInfo } from "./api/patient/getPatientInfo";
-import { getPatientReports } from "./api/patient/getPatientReports";
-import { getPatientVitals } from "./api/patient/getPatientVitals";
-import { getPatientConditions } from "./api/patient/getPatientConditions";
+import { getPatientAllergies } from "./api/getPatientAllergies";
+import { getPatientAppointments } from "./api/getPatientAppointments";
+import { getPatientInfo } from "./api/getPatientInfo";
+import { getPatientReports } from "./api/getPatientReports";
+import { getPatientVitals } from "./api/getPatientVitals";
+import { getPatientConditions } from "./api/getPatientConditions";
 
 export const getEpicPatientData = async (req: Request, res: Response) => {
 	try {
