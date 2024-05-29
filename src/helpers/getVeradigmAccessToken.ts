@@ -37,8 +37,6 @@ export const getVeradigmAccessToken = async () => {
 
 		const clientAssertion = generateJwt();
 
-		console.log("JWT generated: ", clientAssertion);
-
 		const response = await axios.post(
 			veradigmTokenUrl,
 			new URLSearchParams({
@@ -55,8 +53,6 @@ export const getVeradigmAccessToken = async () => {
 				},
 			},
 		);
-		console.log("Response: ", response.data);
-
 		return response.data.access_token;
 	} catch (error: unknown) {
 		if (error instanceof AxiosError) {
@@ -69,9 +65,3 @@ export const getVeradigmAccessToken = async () => {
 		};
 	}
 };
-
-// Example usage
-// (async () => {
-// 	const token = await getVeradigmAccessToken();
-// 	console.log(token);
-// })();

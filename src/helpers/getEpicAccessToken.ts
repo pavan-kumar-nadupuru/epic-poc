@@ -59,7 +59,7 @@ export const getEpicAccessToken = async () => {
 		if (error instanceof AxiosError) {
 			console.error(error.response ? error.response.data : error.message);
 		}
-		console.log(error);
+		console.error(error);
 		return {
 			error: "Failed to get access token",
 		};

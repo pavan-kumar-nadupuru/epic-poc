@@ -6,6 +6,7 @@ import { getPatientAppointments } from "./api/patient/getPatientAppointments";
 import { getPatientInfo } from "./api/patient/getPatientInfo";
 import { getPatientReports } from "./api/patient/getPatientReports";
 import { getPatientVitals } from "./api/patient/getPatientVitals";
+import { getPatientConditions } from "./api/patient/getPatientConditions";
 
 export const getEpicPatientData = async (req: Request, res: Response) => {
 	try {
@@ -31,12 +32,17 @@ export const getEpicPatientData = async (req: Request, res: Response) => {
 			accessToken,
 		);
 		const reports = await getPatientReports(patientId, accessToken);
+		const patientConditions = await getPatientConditions(
+			patientId,
+			accessToken,
+		);
 		res.json({
 			patient,
 			allergies,
 			vitals,
 			appointments,
 			reports,
+			patientConditions,
 		});
 	} catch (error) {
 		console.error("Failed to search for patient", error);

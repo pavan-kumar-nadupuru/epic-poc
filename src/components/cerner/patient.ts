@@ -6,8 +6,7 @@ import { getPatientAllergies } from "./api/getPatientAllergies";
 import { getPatientAppointments } from "./api/getPatientAppointments";
 import { getPatientVitals } from "./api/getPatientVitals";
 import { getPatientReports } from "./api/getPatientReports";
-// import { getPatientReports } from "./api/patient/getPatientReports";
-// import { getPatientVitals } from "./api/patient/getPatientVitals";
+import { getPatientConditions } from "./api/getPatientConditions";
 
 export const getCernerPatientData = async (req: Request, res: Response) => {
 	try {
@@ -33,12 +32,17 @@ export const getCernerPatientData = async (req: Request, res: Response) => {
 			accessToken,
 		);
 		const reports = await getPatientReports(patientId, accessToken);
+		const patientConditions = await getPatientConditions(
+			patientId,
+			accessToken,
+		);
 		res.json({
 			patient,
 			allergies,
 			vitals,
 			appointments,
 			reports,
+			patientConditions,
 		});
 	} catch (error) {
 		console.error("Failed to search for patient", error);

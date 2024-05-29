@@ -34,7 +34,7 @@ export const getCernerAccessToken = async () => {
 		if (error instanceof AxiosError) {
 			console.error(error.response ? error.response.data : error.message);
 		}
-		console.log((error as Error).message);
+		console.error((error as Error).message);
 		return {
 			error: "Failed to get access token",
 		};

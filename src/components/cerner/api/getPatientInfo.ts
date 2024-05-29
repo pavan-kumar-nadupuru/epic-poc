@@ -13,7 +13,6 @@ export const getPatientInfo = async (
 			headers: { Authorization: `Bearer ${accessToken}` },
 		};
 		const response = await axios.request(config);
-		console.log(response.data);
 		if (response.data.total === 0) {
 			return null; // Handle no patient found
 		}
